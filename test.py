@@ -38,7 +38,7 @@ def get_model(name, categorical_field_dims, numerical_num, task_num, expert_num,
         print("Model: DDPO")
         print("Dataset:",args.dataset_name)
         return DDPO_E(categorical_field_dims, numerical_num, embed_dim=embed_dim, bottom_mlp_dims=(128, 64), tower_mlp_dims=(64, 32), task_num=task_num, dropout=0.2)
-    elif name == 'ddpo' and 'cpp' in args.dataset_name:
+    elif name == 'ddpo' and 'ccp' in args.dataset_name:
         print("Model: DDPO")
         print("Dataset:",args.dataset_name)
         return DDPO_C(categorical_field_dims, numerical_num, embed_dim=embed_dim, bottom_mlp_dims=(128, 64), tower_mlp_dims=(64, 32), task_num=task_num, dropout=0.2)
@@ -50,7 +50,7 @@ def get_model(name, categorical_field_dims, numerical_num, task_num, expert_num,
         print("Model: MDDPO")
         print("Dataset:",args.dataset_name)
         return MDDPO_E(categorical_field_dims, numerical_num, embed_dim=embed_dim, bottom_mlp_dims=(16,), tower_mlp_dims=(16, 8), task_num=task_num, expert_num=expert_num, dropout=0.2)
-    elif name == 'mddpo' and 'cpp' in args.dataset_name:
+    elif name == 'mddpo' and 'ccp' in args.dataset_name:
         print("Model: MDDPO")
         print("Dataset:",args.dataset_name)
         return MDDPO_C(categorical_field_dims, numerical_num, embed_dim=embed_dim, bottom_mlp_dims=(16,), tower_mlp_dims=(16, 8), task_num=task_num, expert_num=expert_num, dropout=0.2)
